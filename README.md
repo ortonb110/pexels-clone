@@ -1,8 +1,10 @@
-# React + Vite
+# This project is a clone of Pexels 
+Readme will be updated upon changes to project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Outline: 
+1. Project creation and Git initiation
+2. Directory Setup
+3. Pages Setup and Router Configuration
+4. Context and probably reducer setup if needed
+5. ... updates will follow up
+6. Get someone who's interested to collaborate on the project
