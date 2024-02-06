@@ -7,4 +7,4 @@ Readme will be updated upon changes to project
 3. Pages Setup and Router Configuration
 4. Context and probably reducer setup if needed
 5. ... updates will follow up
-6. Get someone who's interested to collaborate on the project
+6. If you're interested and want to collaborate with me on this project, say hi on whatsapp +233559875765
