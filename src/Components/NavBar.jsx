@@ -16,16 +16,16 @@ const NavBar = () => {
         >
           <path d="m1.5 0a1.5 1.5 0 0 0 -1.5 1.5v21a1.5 1.5 0 0 0 1.5 1.5h21a1.5 1.5 0 0 0 1.5-1.5v-21a1.5 1.5 0 0 0 -1.5-1.5zm6.75 6.75h5.2715a3.843 3.843 0 0 1 .627 7.6348v2.8652h-5.8985zm1.5 1.5v7.5h2.8984v-2.8145h.873a2.343 2.343 0 1 0 0-4.6855z" />
         </svg>
-        <h1 className="hidden md:block capitalize text-[2.5rem] font-[600]">
+        <h1 className="hidden lg:block capitalize text-[2.5rem] font-[600]">
           pexels
         </h1>
       </NavLink>
       <SearchComponent/>
       <div className="capitalize text-[2.3rem] gap-7 flex font-[500] items-center">
-        <NavLink to={"/explore"} className={`hidden md:block`}>
+        <NavLink to={"/explore"} className={`hidden lg:block`}>
           explore
         </NavLink>
-        <NavLink to={"/license"} className={`hidden md:block`}>
+        <NavLink to={"/license"} className={`hidden lg:block`}>
           license
         </NavLink>
         <NavLink
@@ -33,7 +33,7 @@ const NavBar = () => {
         >
           join
         </NavLink>
-        <IoIosMenu className="md:hidden text-[3rem]" />
+        <IoIosMenu className="lg:hidden text-[3rem]" />
       </div>
     </nav>
   );
