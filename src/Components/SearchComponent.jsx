@@ -23,8 +23,8 @@ const SearchComponent = () => {
   };
 
   return (
-    <form className="w-[75%] md:w-[60%]" onSubmit={submit}>
-      <div className="flex items-center border-2 rounded-lg py-[0.3rem] gap-3 px-[1rem]">
+    <form className=" relative w-[75%] md:w-[50%] " onSubmit={submit}>
+      <div className=" flex items-center border-2 rounded-xl py-[0.3rem] gap-3 px-[1rem] bg-white">
         <button
           className=" text-[2rem] capitalize flex justify-between items-center border-r-2"
           type="button"
@@ -34,10 +34,10 @@ const SearchComponent = () => {
         </button>
         {enter && (
           <div
-            className={`absolute top-[6.9rem] left-[17.8%] py-[1rem] px-[2.2rem] border-[1px] rounded-lg bg-white text-[2rem] space-y-3`}
+            className={`absolute left-[-0.1rem] top-[4.7rem]  py-[1rem] px-[2.2rem] border-[1px] rounded-xl bg-white text-[2rem] space-y-3`}
           >
             <button
-              className="  capitalize flex justify-between items-center"
+              className="  capitalize flex justify-between items-center text-black"
               onClick={() => searchType("photos")}
             >
               <span className="flex items-center gap-2 font-[500]">
@@ -46,7 +46,7 @@ const SearchComponent = () => {
               </span>
             </button>
             <button
-              className="  capitalize flex justify-between items-center"
+              className="  capitalize flex justify-between items-center text-black"
               onClick={() => searchType("videos")}
             >
               <span className="flex items-center gap-2 font-[500]">
@@ -58,7 +58,7 @@ const SearchComponent = () => {
         )}
         <input
           type="text"
-          className="outline-none w-full py-[0.5rem] rounded-lg text-[1.6rem]  font-[500]"
+          className="outline-none w-full py-[0.5rem] rounded-xl text-[1.6rem]  font-[500] text-black"
           placeholder={`Search for free ${
             category === "photos" ? "photos" : "videos"
           }`}
