@@ -5,7 +5,7 @@ import NavBar from "./Components/NavBar";
 function App() {
   return (
     <Router>
-      <NavBar />
+      {/* <NavBar searchBar={true} backgroundColor={'white'}/> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="explore" element={<Explore />} />

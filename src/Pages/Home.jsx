@@ -1,5 +1,8 @@
 import { Helmet } from "react-helmet";
 import { Fragment } from "react";
+import { useEffect } from "react";
+
+
 
 const Home = () => {
   return (
@@ -10,9 +13,7 @@ const Home = () => {
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <main>
-        <h1>
-          
-        </h1>
+        
       </main>
     </Fragment>
   );

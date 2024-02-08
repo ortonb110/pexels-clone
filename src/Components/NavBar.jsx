@@ -2,9 +2,10 @@ import { NavLink } from "react-router-dom";
 import { IoIosMenu } from "react-icons/io";
 import SearchComponent from './SearchComponent';
 
-const NavBar = () => {
+// eslint-disable-next-line react/prop-types
+const NavBar = ({searchBar, backgroundColor }) => {
   return (
-    <nav className=" w-full px-[2rem] md:px-[5rem] py-[2rem] bg-white flex justify-between items-center border-b-[1.5px] ">
+    <nav className={`w-full px-[2rem] md:px-[5rem] py-[2rem] bg-${backgroundColor} flex justify-between items-center border-b-[1.5px] `}>
       <NavLink
         to={"/"}
         className={`flex gap-5 items-center hover:opacity-[0.7] transition-all ease-in-out duration-150`}
@@ -20,7 +21,9 @@ const NavBar = () => {
           pexels
         </h1>
       </NavLink>
-      <SearchComponent/>
+      {
+        searchBar && <SearchComponent/>
+      }
       <div className="capitalize text-[2.3rem] gap-7 flex font-[500] items-center">
         <NavLink to={"/explore"} className={`hidden lg:block`}>
           explore
