@@ -31,7 +31,7 @@ const SearchComponent = ({ formWidth }) => {
       }`}
       onSubmit={submit}
     >
-      <div className=" flex items-center border-2 rounded-xl py-[0.3rem] gap-3 px-[1rem] bg-white">
+      <div className=" flex items-center border-0 rounded-xl py-[0.3rem] gap-3 px-[1rem] bg-white">
         <button
           className=" text-[2rem] capitalize flex justify-between items-center border-r-2"
           type="button"
@@ -69,7 +69,7 @@ const SearchComponent = ({ formWidth }) => {
         )}
         <input
           type="text"
-          className="outline-none w-full py-[0.5rem] rounded-xl text-[1.6rem]  font-[500] text-black"
+          className="outline-none w-full py-[0.5rem] rounded-xl text-[1.6rem]  font-[500] text-black border-0 "
           placeholder={`Search for free ${
             category === "photos" ? "photos" : "videos"
           }`}

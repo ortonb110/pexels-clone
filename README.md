@@ -1,4 +1,4 @@
-# This project is a clone of Pexels 
+# This project is a clone of Pexels
 Readme will be updated upon changes to project
 
 ## Project Outline: 
