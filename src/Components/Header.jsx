@@ -1,7 +1,32 @@
 import NavBar from "./NavBar";
 import SearchComponent from "./SearchComponent";
+import axios from "axios";
+import { useEffect } from "react";
 
 export const Header = () => {
+  let result;
+
+  const fetchWallpaper = async () => {
+    try {
+      const data = await axios.get(
+        "https://api.pexels.com/v1/curated",
+        {
+          headers: {
+            Authorization:
+              "BpcIrcNPB6GY1jcLDdlPYgAmhEE7E4Xhz9hm86g830nuKTLk39GHqurs",
+          },
+        }
+      );
+
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    fetchWallpaper();
+  }, []);
+
   return (
     <header className="bg-[url('https://images.pexels.com/photos/18267830/pexels-photo-18267830/free-photo-of-close-up-of-red-roses-with-water-drops-on-the-petals.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] h-[56.4vh] bg-no-repeat bg-cover bg-left bg-black bg-blend-overlay bg-opacity-[0.6]">
       <NavBar
