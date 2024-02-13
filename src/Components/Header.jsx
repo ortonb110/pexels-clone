@@ -10,7 +10,7 @@ export const Header = () => {
         backgroundColor={"transparent"}
       />
       <section className="flex flex-col justify-center items-center text-white gap-9 mt-[7rem] px-[2rem] md:px-0">
-        <h1 className="text-[2.8rem] font-[600] w-full md:w-[63rem]">
+        <h1 className="text-[3.2rem] font-[600] w-full md:w-[63rem]">
           The best free stock photos, royalty free images & videos shared by
           creators.
         </h1>
