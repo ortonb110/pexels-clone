@@ -4,7 +4,6 @@ import axios from "axios";
 import { useEffect } from "react";
 
 export const Header = () => {
-  let result;
 
   const fetchWallpaper = async () => {
     try {
