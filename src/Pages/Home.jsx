@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import { Fragment } from "react";
 import { Header } from "../Components/Header";
+import ImageLoader from "../Components/imageLoader";
 
 const Home = () => {
   return (
@@ -15,6 +16,9 @@ const Home = () => {
       </Helmet>
       <main >
         <Header/>
+        <section className="px-[10rem] pt-[5rem] pb-[2rem]">
+          <ImageLoader/>
+        </section>
       </main>
     </Fragment>
   );
