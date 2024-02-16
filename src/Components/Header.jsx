@@ -4,7 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export const Header = () => {
-  const [result, setResult] = useState('bg-black');
+  const [result, setResult] = useState('');
   const [name, setName] = useState('undefined');
   const fetchWallpaper = async () => {
     try {
@@ -14,8 +14,10 @@ export const Header = () => {
             "BpcIrcNPB6GY1jcLDdlPYgAmhEE7E4Xhz9hm86g830nuKTLk39GHqurs",
         },
       });
-      setResult(data?.photos[0]?.src?.landscape);
-      setName(data?.photos[0]?.photographer);
+      setResult(data?.photos[7]?.src?.landscape);
+      console.log(data?.photos[0]?.src?.landscape);
+      console.log(data?.photos[0]?.src?.landscape);
+      setName(data?.photos[7]?.photographer);
     } catch (error) {
       console.log(error);
     }
