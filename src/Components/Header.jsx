@@ -14,7 +14,7 @@ export const Header = () => {
             "BpcIrcNPB6GY1jcLDdlPYgAmhEE7E4Xhz9hm86g830nuKTLk39GHqurs",
         },
       });
-      setResult(data?.photos[7]?.src?.landscape);
+      setResult(data?.photos[0]?.src?.landscape);
       console.log(data?.photos[0]?.src?.landscape);
       console.log(data?.photos[0]?.src?.landscape);
       setName(data?.photos[7]?.photographer);
