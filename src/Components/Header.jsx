@@ -16,7 +16,6 @@ export const Header = () => {
       });
       setResult(data?.photos[0]?.src?.landscape);
       console.log(data?.photos[0]?.src?.landscape);
-      console.log(data?.photos[0]?.src?.landscape);
       setName(data?.photos[7]?.photographer);
     } catch (error) {
       console.log(error);
