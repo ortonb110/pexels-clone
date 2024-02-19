@@ -15,13 +15,5 @@
     
   }
 
-  main {
-    
-  }
 }
 
-@layer components {
-  .hero-background {
-    background-image: url('https://images.pexels.com/photos/20219004/pexels-photo-20219004.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200');
-  }
-}

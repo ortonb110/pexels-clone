@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 
 export const Header = () => {
   const [result, setResult] = useState('');
-  const [isLoading, setIsLoading] = useState(true);
   const [name, setName] = useState('undefined');
   const fetchWallpaper = async () => {
     try {
@@ -16,7 +15,6 @@ export const Header = () => {
         },
       });
       setResult(data?.photos[0]?.src?.landscape);
-      setIsLoading(false)
       setName(data?.photos[0]?.photographer);
     } catch (error) {
       console.log(error);
@@ -27,7 +25,7 @@ export const Header = () => {
   }, []);
 
   return (
-    <header className={`relative ${isLoading? ``: `hero-background`} min-h-[56.4vh] bg-no-repeat bg-cover bg-left bg-black bg-blend-overlay bg-opacity-[0.6]`}>
+    <header style={{backgroundImage:`url('${result}')`}} className={`relative min-h-[56.4vh] bg-no-repeat bg-cover bg-left bg-black bg-blend-overlay bg-opacity-[0.6]`}>
       <NavBar
         borderBottom={false}
         textColor={"text-white"}
