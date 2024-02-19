@@ -27,7 +27,7 @@ export const Header = () => {
   }, []);
 
   return (
-    <header className={`relative ${isLoading ? ``:`bg-[url('${result}')]`} min-h-[56.4vh] bg-no-repeat bg-cover bg-left bg-black bg-blend-overlay bg-opacity-[0.6]`}>
+    <header className={`relative ${isLoading? ``: `hero-background`} min-h-[56.4vh] bg-no-repeat bg-cover bg-left bg-black bg-blend-overlay bg-opacity-[0.6]`}>
       <NavBar
         borderBottom={false}
         textColor={"text-white"}
