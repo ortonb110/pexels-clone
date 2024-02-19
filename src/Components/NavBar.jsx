@@ -24,7 +24,7 @@ const NavBar = ({searchBar, backgroundColor, borderBottom, textColor}) => {
       {
         searchBar && <SearchComponent/>
       }
-      <div className="capitalize text-[2.3rem] gap-7 flex font-[500] items-center">
+      <div className="capitalize text-[2.3rem] gap-7 flex font-[500] items-center ">
         <NavLink to={"/explore"} className={`hidden lg:block`}>
           explore
         </NavLink>
