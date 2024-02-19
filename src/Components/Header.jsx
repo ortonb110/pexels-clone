@@ -5,18 +5,19 @@ import { useEffect, useState } from "react";
 
 export const Header = () => {
   const [result, setResult] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
   const [name, setName] = useState('undefined');
   const fetchWallpaper = async () => {
     try {
-      const {data} = await axios.get("https://api.pexels.com/v1/curated", {
+      const {data} = await axios.get("https://api.pexels.com/v1/curated?per_page=1", {
         headers: {
           Authorization:
             "BpcIrcNPB6GY1jcLDdlPYgAmhEE7E4Xhz9hm86g830nuKTLk39GHqurs",
         },
       });
       setResult(data?.photos[0]?.src?.landscape);
-      console.log(data?.photos[0]?.src?.landscape);
-      setName(data?.photos[7]?.photographer);
+      setIsLoading(false)
+      setName(data?.photos[0]?.photographer);
     } catch (error) {
       console.log(error);
     }
@@ -26,7 +27,7 @@ export const Header = () => {
   }, []);
 
   return (
-    <header className={`relative bg-[url('${result}')] min-h-[56.4vh] bg-no-repeat bg-cover bg-left bg-black bg-blend-overlay bg-opacity-[0.6]`}>
+    <header className={`relative ${isLoading ? ``:`bg-[url('${result}')]`} min-h-[56.4vh] bg-no-repeat bg-cover bg-left bg-black bg-blend-overlay bg-opacity-[0.6]`}>
       <NavBar
         borderBottom={false}
         textColor={"text-white"}
