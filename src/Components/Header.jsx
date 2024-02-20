@@ -6,16 +6,17 @@ import { useEffect, useState } from "react";
 export const Header = () => {
   const [result, setResult] = useState('');
   const [name, setName] = useState('undefined');
+  let randomImage = Math.floor(Math.random()*15);
   const fetchWallpaper = async () => {
     try {
-      const {data} = await axios.get("https://api.pexels.com/v1/curated?per_page=1", {
+      const {data} = await axios.get("https://api.pexels.com/v1/curated", {
         headers: {
           Authorization:
             "BpcIrcNPB6GY1jcLDdlPYgAmhEE7E4Xhz9hm86g830nuKTLk39GHqurs",
         },
       });
-      setResult(data?.photos[0]?.src?.landscape);
-      setName(data?.photos[0]?.photographer);
+      setResult(data?.photos[randomImage]?.src?.landscape);
+      setName(data?.photos[randomImage]?.photographer);
     } catch (error) {
       console.log(error);
     }
