@@ -5,6 +5,7 @@ import { useState } from "react";
 import PhotosBtn from "./PhotosBtn";
 import VideosBtn from "./VideosBtn";
 
+// eslint-disable-next-line react/prop-types
 const SearchComponent = ({ formWidth }) => {
   const [enter, setEnter] = useState(false);
   const [category, setCategory] = useState("photos");
@@ -31,7 +32,7 @@ const SearchComponent = ({ formWidth }) => {
       }`}
       onSubmit={submit}
     >
-      <div className="  flex items-center border-0 rounded-xl py-[0.3rem] gap-3 px-[1rem] bg-gray-100">
+      <div className="  flex items-center border-0 rounded-xl py-[0.5rem] gap-3 px-[1rem] bg-gray-100">
         <button
           className=" text-[2rem] capitalize flex justify-between items-center border-r-2"
           type="button"

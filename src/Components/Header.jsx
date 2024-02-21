@@ -3,17 +3,21 @@ import SearchComponent from "./SearchComponent";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export const Header = () => {
-  const [result, setResult] = useState('');
-  const [name, setName] = useState('undefined');
+// eslint-disable-next-line react/prop-types
+export const Header = ({ setHeaderHeight, setOffSetTop }) => {
+  const [result, setResult] = useState("");
+  const [name, setName] = useState("undefined");
   const fetchWallpaper = async () => {
     try {
-      const {data} = await axios.get("https://api.pexels.com/v1/curated?per_page=1", {
-        headers: {
-          Authorization:
-            "BpcIrcNPB6GY1jcLDdlPYgAmhEE7E4Xhz9hm86g830nuKTLk39GHqurs",
-        },
-      });
+      const { data } = await axios.get(
+        "https://api.pexels.com/v1/curated?per_page=1",
+        {
+          headers: {
+            Authorization:
+              "BpcIrcNPB6GY1jcLDdlPYgAmhEE7E4Xhz9hm86g830nuKTLk39GHqurs",
+          },
+        }
+      );
       setResult(data?.photos[0]?.src?.landscape);
       setName(data?.photos[0]?.photographer);
     } catch (error) {
@@ -21,11 +25,18 @@ export const Header = () => {
     }
   };
   useEffect(() => {
+    const head = document.getElementById("reference");
     fetchWallpaper();
+    setHeaderHeight(head.offsetHeight);
+    setOffSetTop(head.offsetTop);
   }, []);
 
   return (
-    <header style={{backgroundImage:`url('${result}')`}} className={`relative min-h-[56.4vh] bg-no-repeat bg-cover bg-left bg-black bg-blend-overlay bg-opacity-[0.6]`}>
+    <header
+      id="reference"
+      style={{ backgroundImage: `url('${result}')` }}
+      className={`relative min-h-[56.4vh] bg-no-repeat bg-cover bg-left bg-black bg-blend-overlay bg-opacity-[0.6]`}
+    >
       <NavBar
         borderBottom={false}
         textColor={"text-white"}
