@@ -28,7 +28,17 @@ export const Header = ({ setHeaderHeight, setOffSetTop }) => {
     const head = document.getElementById("reference");
     fetchWallpaper();
     setHeaderHeight(head.offsetHeight);
-    setOffSetTop(head.offsetTop);
+
+    // window.addEventListener("scroll", () => {
+    //   // if(window.scrollY > (headerHeight + offSetTop)) {
+    //   //   alert('Passed Header component');
+    //   // }
+    //   setHeaderHeight('hello');
+    //   setOffSetTop('head.offsetTop');
+    //   // console.log(
+    //   //   `ScrollY: ${window.scrollY}, Height: ${head.offsetHeight}, OffSetTop: ${head.offsetTop}`
+    //   // );
+    // });
   }, []);
 
   return (

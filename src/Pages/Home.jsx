@@ -5,14 +5,15 @@ import ImageLoader from "../Components/imageLoader";
 import NavBar from "../Components/NavBar";
 
 const Home = () => {
-  const [headerHeight, setHeaderHeight] = useState();
-  const [offSetTop, setOffSetTop] = useState();
+  const [headerHeight, setHeaderHeight] = useState(0);
+  const [offSetTop, setOffSetTop] = useState(0);
   useEffect(() => {
     window.addEventListener("scroll", () => {
       // if(window.scrollY > (headerHeight + offSetTop)) {
       //   alert('Passed Header component');
       // }
-      console.log(`ScrollY: ${window.scrollY}, Height: ${headerHeight}, OffSetTop: ${offSetTop}`);
+      // console.log(`ScrollY: ${window.scrollY}, Height: ${headerHeight}, OffSetTop: ${offSetTop}`);
+      console.log(headerHeight);
     });
   }, []);
 
