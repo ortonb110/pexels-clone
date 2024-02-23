@@ -8,13 +8,13 @@ const Home = () => {
   const [headerHeight, setHeaderHeight] = useState(0);
   const [offSetTop, setOffSetTop] = useState(0);
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      // if(window.scrollY > (headerHeight + offSetTop)) {
-      //   alert('Passed Header component');
-      // }
-      // console.log(`ScrollY: ${window.scrollY}, Height: ${headerHeight}, OffSetTop: ${offSetTop}`);
-      console.log(headerHeight);
-    });
+    // window.addEventListener("scroll", () => {
+    //   // if(window.scrollY > (headerHeight + offSetTop)) {
+    //   //   alert('Passed Header component');
+    //   // }
+    //   // console.log(`ScrollY: ${window.scrollY}, Height: ${headerHeight}, OffSetTop: ${offSetTop}`);
+    //   console.log(headerHeight);
+    // });
   }, []);
 
   return (
@@ -28,7 +28,7 @@ const Home = () => {
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <main>
-        <Header setHeaderHeight={setHeaderHeight} setOffSetTop={setOffSetTop}/>
+        <Header setHeaderHeight={setHeaderHeight } setOffSetTop={setOffSetTop}/>
         <NavBar
           searchBar={true}
           backgroundColor={"white"}
