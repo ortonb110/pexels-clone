@@ -25,21 +25,9 @@ export const Header = ({ setHeaderHeight, setOffSetTop }) => {
     }
   };
   useEffect(() => {
-    const head = document.getElementById("reference");
-    fetchWallpaper();
-   console.log(head.offsetHeight)
     
-
-    // window.addEventListener("scroll", () => {
-    //   // if(window.scrollY > (headerHeight + offSetTop)) {
-    //   //   alert('Passed Header component');
-    //   // }
-    //   setHeaderHeight('hello');
-    //   setOffSetTop('head.offsetTop');
-    //   // console.log(
-    //   //   `ScrollY: ${window.scrollY}, Height: ${head.offsetHeight}, OffSetTop: ${head.offsetTop}`
-    //   // );
-    // });
+    fetchWallpaper();
+   
   }, []);
 
   return (

@@ -8,7 +8,7 @@ const Home = () => {
   
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if(window.scrollY > (518)) {
+      if(window.scrollY > (525)) {
         //Add display class to Navigation bar
       }
        else {
