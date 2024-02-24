@@ -27,7 +27,8 @@ export const Header = ({ setHeaderHeight, setOffSetTop }) => {
   useEffect(() => {
     const head = document.getElementById("reference");
     fetchWallpaper();
-    setHeaderHeight(head.offsetHeight);
+   console.log(head.offsetHeight)
+    
 
     // window.addEventListener("scroll", () => {
     //   // if(window.scrollY > (headerHeight + offSetTop)) {
