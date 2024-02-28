@@ -12,7 +12,7 @@ const Home = () => {
         //Add display class to Navigation bar
       }
        else {
-        //Remove the added class from the navigation bar
+        //
        }
       
     });
