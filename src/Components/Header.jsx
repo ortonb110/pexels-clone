@@ -4,7 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 // eslint-disable-next-line react/prop-types
-export const Header = ({ setHeaderHeight, setOffSetTop }) => {
+export const Header = () => {
   const [result, setResult] = useState("");
   const [name, setName] = useState("undefined");
   const fetchWallpaper = async () => {
@@ -34,7 +34,7 @@ export const Header = ({ setHeaderHeight, setOffSetTop }) => {
     <header
       id="reference"
       style={{ backgroundImage: `url('${result}')` }}
-      className={`relative min-h-[56.4vh] bg-no-repeat bg-cover bg-left bg-black bg-blend-overlay bg-opacity-[0.6]`}
+      className={`relative min-h-[564px] bg-no-repeat bg-cover bg-left bg-black bg-blend-overlay bg-opacity-[0.6]`}
     >
       <NavBar
         borderBottom={false}
