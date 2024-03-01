@@ -8,14 +8,9 @@ const Home = () => {
   const [show, setShow] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
-<<<<<<< HEAD
       if(window.scrollY > (550)) {
         //Add display show class to Navigation bar
         setShow(true);
-=======
-      if(window.scrollY > (525)) {
-        //
->>>>>>> 09b7041e1c7e94d10683f104ae5b55b4abd771ad
       }
        else {
         //Remove display show class from Navigation bar
