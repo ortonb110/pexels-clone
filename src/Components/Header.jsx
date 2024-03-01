@@ -40,6 +40,8 @@ export const Header = ({ setHeaderHeight, setOffSetTop }) => {
         borderBottom={false}
         textColor={"text-white"}
         backgroundColor={"transparent"}
+        show={true}
+        fixToTop={false}
       />
       <section className="flex flex-col justify-center items-center text-white gap-9 mt-[7rem] px-[2rem] md:px-0">
         <h1 className=" text-[2.8rem] md:text-[3.2rem] font-[600] w-full md:w-[63rem]">

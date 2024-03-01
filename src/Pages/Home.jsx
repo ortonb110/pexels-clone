@@ -1,18 +1,20 @@
 import { Helmet } from "react-helmet";
-import { Fragment, useEffect } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Header } from "../Components/Header";
 import ImageLoader from "../Components/imageLoader";
 import NavBar from "../Components/NavBar";
 
 const Home = () => {
-  
+  const [show, setShow] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if(window.scrollY > (525)) {
-        //Add display class to Navigation bar
+      if(window.scrollY > (550)) {
+        //Add display show class to Navigation bar
+        setShow(true);
       }
        else {
-        //
+        //Remove display show class from Navigation bar
+        setShow(false);
        }
       
     });
@@ -35,6 +37,8 @@ const Home = () => {
           backgroundColor={"white"}
           borderBottom={true}
           textColor={"text-black"}
+          show={show}
+          fixToTop={true}
         />
         <section className="px-[10rem] pt-[5rem] pb-[2rem]">
           <ImageLoader />
