@@ -9,11 +9,11 @@ const Home = () => {
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if(window.scrollY > (560)) {
-        //Add display show class to Navigation bar
+        //Add display show class to Navigation bar when window scroll is greater than 560px
         setShow(true);
       }
        else {
-        //Remove display show class from Navigation bar
+        
         setShow(false);
        }
       
