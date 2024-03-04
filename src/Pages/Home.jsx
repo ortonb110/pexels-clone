@@ -39,11 +39,11 @@ const Home = () => {
           fixToTop={true}
         />
         <section className="px-[10rem] pt-[5rem] pb-[2rem]">
-          <div>
-            <NavLink to={"/home"}>home</NavLink>
-            <NavLink to={"/videos"}>video</NavLink>
-            <NavLink to={"/home"}>leaderboard</NavLink>
-            <NavLink to={"/home"}>challenges</NavLink>
+          <div className="flex space-x-5 justify-center items-center text-[2.5rem] capitalize">
+            <NavLink to={"/"}>home</NavLink>
+            <NavLink to={"/videos"}>videos</NavLink>
+            <NavLink to={"/error"}>leaderboard</NavLink>
+            <NavLink to={"/error"}>challenges</NavLink>
           </div>
           <ImageLoader />
         </section>

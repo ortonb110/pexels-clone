@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { IoIosMenu } from "react-icons/io";
 import SearchComponent from './SearchComponent';
 
@@ -6,7 +6,7 @@ import SearchComponent from './SearchComponent';
 const NavBar = ({searchBar, backgroundColor, borderBottom, textColor, show, fixToTop}) => {
   return (
     <nav className={`${fixToTop? "fixed top-0": "static"} ${show? "visible":"hidden"} w-full px-[2rem] md:px-[5rem] py-[2rem] bg-${backgroundColor} flex justify-between items-center ${borderBottom && 'border-b-[1.5px]'} ${textColor}`}>
-      <NavLink
+      <Link
         to={"/"}
         className={`flex gap-5 items-center hover:opacity-[0.7] transition-all ease-in-out duration-150`}
       >
@@ -20,7 +20,7 @@ const NavBar = ({searchBar, backgroundColor, borderBottom, textColor, show, fixT
         <h1 className="hidden lg:block capitalize text-[2.5rem] font-[600]">
           pexels
         </h1>
-      </NavLink>
+      </Link>
       {
         searchBar && <SearchComponent/>
       }
@@ -31,11 +31,11 @@ const NavBar = ({searchBar, backgroundColor, borderBottom, textColor, show, fixT
         <NavLink to={"/license"} className={`hidden lg:block`}>
           license
         </NavLink>
-        <NavLink
+        <Link
           className={`bg-black rounded-lg text-white px-[1.7rem] py-[0.9rem] text-[1.6rem] hover:opacity-[0.7] hidden md:block`}
         >
           join
-        </NavLink>
+        </Link>
         <IoIosMenu className="lg:hidden text-[3rem]" />
       </div>
     </nav>
