@@ -39,13 +39,13 @@ const Home = () => {
           fixToTop={true}
         />
         <section className="px-[10rem] pt-[5rem] pb-[2rem]">
-          <div className="flex space-x-5 justify-center items-center text-[2.5rem] capitalize">
+          <div className="flex space-x-8 justify-center items-center text-[2rem] md:text-[2.2rem] lg:text-[2.5rem] capitalize">
             <NavLink to={"/"}>home</NavLink>
             <NavLink to={"/videos"}>videos</NavLink>
             <NavLink to={"/error"}>leaderboard</NavLink>
             <NavLink to={"/error"}>challenges</NavLink>
           </div>
-          <ImageLoader />
+          {/* <ImageLoader /> */}
         </section>
       </main>
     </Fragment>
