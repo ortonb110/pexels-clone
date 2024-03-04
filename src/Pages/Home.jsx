@@ -4,7 +4,7 @@ import { Header } from "../Components/Header";
 import ImageLoader from "../Components/imageLoader";
 import NavBar from "../Components/NavBar";
 import { NavLink } from "react-router-dom";
-import {motion} from 'framer-motion'
+import Loader from "../Components/Loader";
 
 const Home = () => {
   const [show, setShow] = useState(false);
@@ -48,12 +48,7 @@ const Home = () => {
           </div>
           {/* <ImageLoader /> */}
         </section>
-        <motion.div className="flex space-x-5 absolute bottom-8 translate-x-[-20rem]">
-          <span className="block w-[2rem] h-[2rem] bg-gray-500 rounded-full"></span>
-          <span className="block w-[2rem] h-[2rem] bg-gray-500 rounded-full"></span>
-          <span className="block w-[2rem] h-[2rem] bg-gray-500 rounded-full"></span>
-          <span className="block w-[2rem] h-[2rem] bg-gray-500 rounded-full"></span>
-        </motion.div>
+        <Loader/>
       </main>
     </Fragment>
   );
