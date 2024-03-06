@@ -51,6 +51,7 @@ const ImageLoader = () => {
                     src={image.src.original}
                     style={{width: "100%", display: "block"}}
                     alt=""
+                    className="cursor-pointer"
                 />
             ))}
         </Masonry>
