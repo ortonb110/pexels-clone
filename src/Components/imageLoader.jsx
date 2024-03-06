@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Image from "./Image";
 import axios from "axios";
+import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 
 const ImageLoader = () => {
   const [images, setImages] = useState([]);
@@ -18,6 +19,7 @@ const ImageLoader = () => {
         }
       );
        const {photos} = data;
+       console.log(photos[0]);
        setImages(prevImages => {
         return [
           ...prevImages,
@@ -39,9 +41,20 @@ const ImageLoader = () => {
   return (
     <section className="">
       {
-        images && images.map((image, key)=>{
-          return <p key={key}>image</p>
-        })
+        images && <ResponsiveMasonry
+        columnsCountBreakPoints={{350: 2, 750: 2, 900: 3}}
+    >
+        <Masonry gutter="15px">
+            {images.map((image, i) => (
+                <img
+                    key={i}
+                    src={image.src.original}
+                    style={{width: "100%", display: "block"}}
+                    alt=""
+                />
+            ))}
+        </Masonry>
+    </ResponsiveMasonry>
       }
     </section>
   );
