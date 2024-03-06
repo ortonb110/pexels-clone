@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import Masonry from "masonry-layout";
 import Image from "./Image";
 import axios from "axios";
 
 const ImageLoader = () => {
-  const [images, setImages] = useState();
+  const [images, setImages] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-
+  
   const fetchImages = async () => {
     try {
       const {data}  = await axios.get(
@@ -18,7 +17,14 @@ const ImageLoader = () => {
           },
         }
       );
-      console.log(data);
+       const {photos} = data;
+       setImages(prevImages => {
+        return [
+          ...prevImages,
+          ...photos
+        ]
+       })
+       console.log(images);
       setCurrentPage(currentPage+1);
     } catch (error) {
       console.log(error);
@@ -27,11 +33,16 @@ const ImageLoader = () => {
 
   useEffect(() => {
     fetchImages();
+    
   }, []);
 
   return (
-    <section>
-      <Image />
+    <section className="">
+      {
+        images && images.map((image, key)=>{
+          return <p key={key}>image</p>
+        })
+      }
     </section>
   );
 };

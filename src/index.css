@@ -16,7 +16,13 @@
     
   }
 
+  
  
+}
+
+.grid-item {
+  width: 466px;
+  max-height: 700px;
 }
 
 .active {
