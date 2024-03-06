@@ -46,9 +46,9 @@ const Home = () => {
             <NavLink to={"/error"}>leaderboard</NavLink>
             <NavLink to={"/error"}>challenges</NavLink>
           </div>
-          {/* <ImageLoader /> */}
+          <ImageLoader />
         </section>
-        <Loader/>
+        {/* <Loader/> */}
       </main>
     </Fragment>
   );
