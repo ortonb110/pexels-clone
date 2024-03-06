@@ -10,7 +10,7 @@ const ImageLoader = () => {
   const fetchImages = async () => {
     try {
       const {data}  = await axios.get(
-        `https://api.pexels.com/v1/curated?page=${currentPage}&per_page=40`,
+        `https://api.pexels.com/v1/curated?page=${currentPage}&per_page=15`,
         {
           headers: {
             Authorization:
