@@ -5,7 +5,7 @@ import SearchComponent from './SearchComponent';
 // eslint-disable-next-line react/prop-types
 const NavBar = ({searchBar, backgroundColor, borderBottom, textColor, show, fixToTop}) => {
   return (
-    <nav className={`${fixToTop? "fixed top-0": "static"} ${show? "visible":"hidden"} w-full px-[2rem] md:px-[5rem] py-[2rem] bg-${backgroundColor} flex justify-between items-center ${borderBottom && 'border-b-[1.5px]'} ${textColor}`}>
+    <nav className={`${fixToTop? "z-50 fixed top-0": "static"} ${show? "visible":"hidden"} w-full px-[2rem] md:px-[5rem] py-[2rem] bg-${backgroundColor} flex justify-between items-center ${borderBottom && 'border-b-[1.5px]'} ${textColor}`}>
       <Link
         to={"/"}
         className={`flex gap-5 items-center hover:opacity-[0.7] transition-all ease-in-out duration-150`}

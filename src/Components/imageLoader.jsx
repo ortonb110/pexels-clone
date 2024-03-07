@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import Image from "./Image";
 
 const ImageLoader = () => {
   const [images, setImages] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  
+
   const fetchImages = async () => {
     try {
-      const {data}  = await axios.get(
+      const { data } = await axios.get(
         `https://api.pexels.com/v1/curated?page=${currentPage}&per_page=15`,
         {
           headers: {
@@ -17,16 +18,12 @@ const ImageLoader = () => {
           },
         }
       );
-       const {photos} = data;
-       console.log(photos[0]);
-       setImages(prevImages => {
-        return [
-          ...prevImages,
-          ...photos
-        ]
-       })
-       console.log(images);
-      setCurrentPage(currentPage+1);
+      const { photos } = data;
+      setImages((prevImages) => {
+        return [...prevImages, ...photos];
+      });
+      console.log(images);
+      setCurrentPage(currentPage + 1);
     } catch (error) {
       console.log(error);
     }
@@ -34,28 +31,40 @@ const ImageLoader = () => {
 
   useEffect(() => {
     fetchImages();
-    
   }, []);
 
   return (
     <section className="">
-      {
-        images && <ResponsiveMasonry
-        columnsCountBreakPoints={{350: 2, 750: 2, 900: 3}}
-    >
-        <Masonry gutter="15px">
-            {images.map((image, i) => (
-                <img
-                    key={i}
+      {images && (
+        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 2, 750: 2, 900: 3 }}>
+          <Masonry gutter="15px">
+            {images.map((image, i) => {
+              return (
+                <div key={i} className="">
+                  <img
                     src={image.src.original}
-                    style={{width: "100%", display: "block"}}
+                    style={{ width: "100%", display: "block" }}
                     alt=""
                     className="cursor-pointer"
-                />
-            ))}
-        </Masonry>
-    </ResponsiveMasonry>
-      }
+                  />
+                  {/* <section className="h-full absolute top-0 w-full">
+                    <div className="relative">
+                      <div className="right-0 absolute">
+                        <span>hi</span>
+                        <span>hello</span>
+                      </div>
+                      <div className="absolute bottom-[5rem]">
+                        <span>profile</span>
+                        <span>button</span>
+                      </div>
+                    </div>
+                  </section> */}
+                </div>
+              );
+            })}
+          </Masonry>
+        </ResponsiveMasonry>
+      )}
     </section>
   );
 };
