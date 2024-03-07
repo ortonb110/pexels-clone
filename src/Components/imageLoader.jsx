@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Image from "./Image";
 import axios from "axios";
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 
