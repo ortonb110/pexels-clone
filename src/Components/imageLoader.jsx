@@ -6,6 +6,7 @@ import Image from "./Image";
 const ImageLoader = () => {
   const [images, setImages] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [numOfImages, setNumOfImages] = useState(0);
 
   const fetchImages = async () => {
     try {
@@ -19,6 +20,7 @@ const ImageLoader = () => {
         }
       );
       const { photos } = data;
+      setNumOfImages(photos.length);
       setImages((prevImages) => {
         return [...prevImages, ...photos];
       });
