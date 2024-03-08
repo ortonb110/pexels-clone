@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import Image from "./Image";
 
 const ImageLoader = () => {
   const [images, setImages] = useState([]);
