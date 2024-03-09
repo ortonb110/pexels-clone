@@ -5,8 +5,6 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 const ImageLoader = () => {
   const [images, setImages] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [numOfImages, setNumOfImages] = useState(0);
-  const [lastCheckedIndex, setLastCheckedIndex] = useState(null);
 
   const fetchImages = async () => {
     try {
@@ -20,11 +18,11 @@ const ImageLoader = () => {
         }
       );
       const { photos } = data;
-      setNumOfImages(photos.length);
       setImages((prevImages) => {
         return [...prevImages, ...photos];
       });
       setCurrentPage(currentPage + 1);
+      console.log(currentPage);
     } catch (error) {
       console.log(error);
     }
@@ -32,8 +30,22 @@ const ImageLoader = () => {
 
   useEffect(() => {
     fetchImages();
-    setLastCheckedIndex(numOfImages - 1)
+    // setLastCheckedIndex(numOfImages)
   }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      
+    });
+    if (window.scrollY >= (Math.floor( document.body.getBoundingClientRect().height / 2))) {
+      console.log("calling");
+      console.log(document.body.getBoundingClientRect().height);
+      // fetchImages();
+    } else {
+      console.log(document.body.getBoundingClientRect().height);
+      console.log(window.scrollY);
+    }
+  }, [window.scrollY]);
 
   return (
     <section className="">
@@ -41,7 +53,6 @@ const ImageLoader = () => {
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 2, 900: 3 }}>
           <Masonry gutter="15px">
             {images.map((image, i) => {
-              
               return (
                 <div key={i} className="">
                   <img
