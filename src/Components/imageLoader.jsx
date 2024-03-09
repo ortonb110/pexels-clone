@@ -6,6 +6,7 @@ const ImageLoader = () => {
   const [images, setImages] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [numOfImages, setNumOfImages] = useState(0);
+  const [lastCheckedIndex, setLastCheckedIndex] = useState(null);
 
   const fetchImages = async () => {
     try {
@@ -23,7 +24,6 @@ const ImageLoader = () => {
       setImages((prevImages) => {
         return [...prevImages, ...photos];
       });
-      console.log(images);
       setCurrentPage(currentPage + 1);
     } catch (error) {
       console.log(error);
@@ -32,14 +32,16 @@ const ImageLoader = () => {
 
   useEffect(() => {
     fetchImages();
+    setLastCheckedIndex(numOfImages - 1)
   }, []);
 
   return (
     <section className="">
       {images && (
-        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 2, 750: 2, 900: 3 }}>
+        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 2, 900: 3 }}>
           <Masonry gutter="15px">
             {images.map((image, i) => {
+              
               return (
                 <div key={i} className="">
                   <img
