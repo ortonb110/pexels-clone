@@ -35,16 +35,16 @@ const ImageLoader = () => {
 
   // useEffect(() => {
   //   window.addEventListener("scroll", () => {
-      
+     
   //   });
-  //   if (window.scrollY >= (Math.floor( document.body.getBoundingClientRect().height / 2))) {
-  //     console.log("calling");
-  //     console.log(document.body.getBoundingClientRect().height);
-  //     // fetchImages();
-  //   } else {
-  //     console.log(document.body.getBoundingClientRect().height);
-  //     console.log(window.scrollY);
-  //   }
+  //   // if (window.scrollY >= (Math.floor( document.body.getBoundingClientRect().height / 2))) {
+  //   //   console.log("calling");
+  //   //   console.log(document.body.getBoundingClientRect().height);
+  //   //   // fetchImages();
+  //   // } else {
+  //   //   console.log(document.body.getBoundingClientRect().height);
+  //   //   console.log(window.scrollY);
+  //   // }
   // }, [window.scrollY]);
 
   return (
