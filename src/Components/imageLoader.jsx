@@ -26,7 +26,6 @@ const ImageLoader = ( ) => {
         return [...prevImages, ...photos];
       });
       setCurrentPage(currentPage + 1);
-      console.log(currentPage);
       setIsLoading(false);
     } catch (error) {
       console.log(error);
@@ -37,22 +36,7 @@ const ImageLoader = ( ) => {
 
   useEffect(() => {
     fetchImages();
-    // setLastCheckedIndex(numOfImages)
   }, []);
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", () => {
-  //     if (window.scrollY >= (Math.floor( document.body.getBoundingClientRect().height / 2))) {
-  //       console.log("calling");
-  //       console.log(document.body.getBoundingClientRect().height);
-  //       fetchImages();
-  //     } else {
-  //       console.log(document.body.getBoundingClientRect().height);
-  //       console.log(window.scrollY);
-  //     }
-  //   });
-
-  // }, [window.scrollY]);
 
   return (
     <section className="">
@@ -68,25 +52,13 @@ const ImageLoader = ( ) => {
                     alt=""
                     className="cursor-pointer"
                   />
-                  {/* <section className="h-full absolute top-0 w-full">
-                    <div className="relative">
-                      <div className="right-0 absolute">
-                        <span>hi</span>
-                        <span>hello</span>
-                      </div>
-                      <div className="absolute bottom-[5rem]">
-                        <span>profile</span>
-                        <span>button</span>
-                      </div>
-                    </div>
-                  </section> */}
                 </div>
               );
             })}
           </Masonry>
         </ResponsiveMasonry>
       )}
-      {isLoading ? (
+      {isLoading? (
             <Loader />
           ) : (
             <div className="w-full flex justify-center items-center mt-[2rem]">
