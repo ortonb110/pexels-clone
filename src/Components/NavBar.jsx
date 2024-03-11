@@ -32,7 +32,7 @@ const NavBar = ({searchBar, backgroundColor, borderBottom, textColor, show, fixT
           license
         </NavLink>
         <Link
-          className={`bg-black rounded-lg text-white px-[1.7rem] py-[0.9rem] text-[1.6rem] hover:opacity-[0.7] hidden md:block`}
+          className={`bg-black rounded-lg text-white px-[1.7rem] py-[0.9rem] text-[1.6rem] hover:opacity-[0.7] hidden md:block transition-all ease-in-out duration-150`}
         >
           join
         </Link>

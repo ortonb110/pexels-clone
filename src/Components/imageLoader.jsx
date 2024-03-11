@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import Loader from "./Loader";
 
-const ImageLoader = () => {
+// eslint-disable-next-line react/prop-types
+const ImageLoader = ( ) => {
   const [images, setImages] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchImages = async () => {
+    setIsLoading(true);
     try {
       const { data } = await axios.get(
         `https://api.pexels.com/v1/curated?page=${currentPage}&per_page=15`,
@@ -23,10 +27,13 @@ const ImageLoader = () => {
       });
       setCurrentPage(currentPage + 1);
       console.log(currentPage);
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
   };
+
+  
 
   useEffect(() => {
     fetchImages();
@@ -44,7 +51,7 @@ const ImageLoader = () => {
   //       console.log(window.scrollY);
   //     }
   //   });
-    
+
   // }, [window.scrollY]);
 
   return (
@@ -79,6 +86,15 @@ const ImageLoader = () => {
           </Masonry>
         </ResponsiveMasonry>
       )}
+      {isLoading ? (
+            <Loader />
+          ) : (
+            <div className="w-full flex justify-center items-center mt-[2rem]">
+              <button onClick={fetchImages} className="bg-black rounded-lg text-white px-[1.7rem] py-[0.9rem] text-[1.6rem] hover:bg-opacity-[0.7] capitalize transition-all ease-in-out duration-150">
+                more
+              </button>
+            </div>
+          )}
     </section>
   );
 };
