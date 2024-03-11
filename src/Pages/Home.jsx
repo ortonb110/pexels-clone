@@ -8,6 +8,7 @@ import Loader from "../Components/Loader";
 
 const Home = () => {
   const [show, setShow] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY >= 600) {
@@ -47,8 +48,11 @@ const Home = () => {
             <NavLink to={"/error"}>challenges</NavLink>
           </div>
           <ImageLoader />
+          {/* <Loader /> */}
+          <button>
+            more
+          </button>
         </section>
-        {/* <Loader/> */}
       </main>
     </Fragment>
   );
