@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import Loader from "./Loader";
+import { useAppContext } from "../Context/AppProvider";
 
 // eslint-disable-next-line react/prop-types
 const ImageLoader = ( ) => {
+  const {search} = useAppContext();  
   const [images, setImages] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
@@ -36,7 +38,7 @@ const ImageLoader = ( ) => {
 
   useEffect(() => {
     fetchImages();
-  }, []);
+  }, [search]);
 
   return (
     <section className="">
