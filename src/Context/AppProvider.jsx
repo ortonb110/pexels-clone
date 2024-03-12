@@ -1,4 +1,4 @@
-import React, { useContext, useState, useReducer } from "react";
+import React, { useContext, useReducer } from "react";
 import reducer from "./Reducer";
 
 import { SEARCH_IMAGE } from "./Actions";
