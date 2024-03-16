@@ -4,7 +4,6 @@ import { Header } from "../Components/Header";
 import ImageLoader from "../Components/imageLoader";
 import NavBar from "../Components/NavBar";
 import { NavLink } from "react-router-dom";
-import Loader from "../Components/Loader";
 
 const Home = () => {
   const [show, setShow] = useState(false);
