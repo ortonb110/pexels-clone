@@ -23,8 +23,6 @@ const SearchComponent = ({ formWidth }) => {
     e.preventDefault();
   };
 
-  //Give form width of 50% when form is in the nav bar
-
   return (
     <form
       className={`relative  ${

@@ -1,4 +1,4 @@
-import sampleImage from  '../assets/SampleImages/sample.webp';
+
 
 // eslint-disable-next-line react/prop-types
 const Image = ({src}) => {
